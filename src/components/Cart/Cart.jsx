@@ -2,7 +2,7 @@ import React from 'react';
 import './Cart.css'
 
 const Cart = (props) => {
-    console.log(props)
+   
     const {cart} = props;
     //console.log(cart);
     //cart ekta array eikhane price ace product er jeita shop.jsx dekhle bujte parbo
@@ -12,11 +12,11 @@ const Cart = (props) => {
 
 
     for(const product of cart){
-        console.log(product.price)
+        
         totalprice = totalprice + product.price * product.quantity;
 
         totalShipping = totalShipping + product.shipping;
-        
+
         quantity = quantity + product.quantity;
     }
    const tax = totalprice * 7/100;
