@@ -30,13 +30,11 @@ const Shop = () => {
         //3get the quantuty the prudct
            
          if(addedProduct){
-            const quantuty = storedcart[id];
-            addedProduct.quantuty = quantuty;
+            const quantity = storedcart[id];
+            addedProduct.quantity = quantity;
             //step 4 add the added product to the saved product
 
             savedcard.push(addedProduct);
-
-       
         
          }
         
