@@ -8,16 +8,24 @@ const Cart = (props) => {
     //cart ekta array eikhane price ace product er jeita shop.jsx dekhle bujte parbo
     let totalprice = 0;
     let totalShipping = 0;
+    let quantity = 0;
+
+
     for(const product of cart){
-        totalprice = totalprice + product.price
-        totalShipping = totalShipping + product.shipping
+        console.log(product.price)
+        totalprice = totalprice + product.price * product.quantity;
+
+        totalShipping = totalShipping + product.shipping;
+        
+        quantity = quantity + product.quantity;
     }
    const tax = totalprice * 7/100;
   const grandTotal = totalprice + totalShipping + tax;
+
     return (
         <div className='cart'>
             <h2>Order summary</h2>
-            <p>Selected items {cart.length}</p>
+            <p>Selected items {quantity}</p>
             <p>toal price ${totalprice}</p>
             <p>shipping : ${totalShipping} </p>
             <p>Tax: ${tax.toFixed(2)} </p>
